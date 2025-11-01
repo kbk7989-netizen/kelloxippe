@@ -1,13 +1,11 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const mysql = require('mysql2');
-
+const express = require("express");
+const path = require("path");
 const app = express();
-const PORT = 3000;
 
-app.use(cors());
-app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, "public")));
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 // MySQL 연결
 const db = mysql.createConnection({
@@ -89,4 +87,5 @@ const db = mysql.createConnection({
     password: '비밀번호',
     database: 'ivy_hosting'
 });
+
 
