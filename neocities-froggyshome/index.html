@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Froggy's Pond</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <script defer src="assets/main.js"></script>
+</head>
+
+<body>
+  <div class="wave-bg"></div>
+
+<header class="header-mini glass">
+  <a href="index.html" class="logo-link">
+    <img src="assets/images/logo.png" alt="Froggy's Home Logo" class="logo-img" />
+  <h1>Froggy's Home</h1>
+    </a>
+  <p class="welcome">“오늘도 개굴한 하루 되세요!”</p>
+</header>
+
+
+  <main>
+    <section class="intro">
+      <h2>🐸 겔로의 연못에 오신 걸 환영합니다 🐸</h2>
+      <p>이곳은 겔로의 개인홈입니다.<br>  
+        커미션, 자캐, 판매 캐릭터 등 다양한 콘텐츠를 둘러보세요!</p>
+    </section>
+
+    <section class="cards">
+      <a href="commission.html" class="card">
+        <h3>🎨 커미션</h3>
+        <p>진행 중인 커미션과 남은 슬롯을 확인할 수 있어요.</p>
+      </a>
+
+      <a href="characters.html" class="card">
+        <h3>🐸 자캐 모음</h3>
+        <p>겔로의 자캐들을 한눈에 볼 수 있는 공간이에요.</p>
+      </a>
+
+      <a href="sale.html" class="card">
+        <h3>💰 판매 캐릭터</h3>
+        <p>현재 판매 중인 캐릭터 목록이에요.</p>
+      </a>
+    </section>
+  </main>
+
+  <!-- 연잎 / 물방울 -->
+  <div class="leaf leaf1"></div>
+  <div class="leaf leaf2"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  
+  <style>
+.frog-img {
+    width: 100px;
+    height: auto; /* 원본 비율 유지 */
+    margin-top:0px;
+    margin-bottom:0px;
+}
+
+</style>
+
+  <footer>
+    © 2025 Froggy's Home | made by kello <a href="login.html" class="link-no-mouse">💚</a>
+    <style>
+    /* 1) 권장: 마우스 변화 없음, 키보드 포커스만 표시 (접근성 유지) */
+.link-no-mouse {
+  color: inherit;            /* 글자 색은 주변 텍스트와 동일 */
+  text-decoration: none;     /* 밑줄 제거 */
+  cursor: default;           /* 마우스 커서가 손가락이 되지 않음 */
+  -webkit-tap-highlight-color: transparent; /* 모바일 탭 하이라이트 제거 */
+}
+
+/* 마우스 오버/활성 상태에서도 변화 없음 */
+.link-no-mouse:hover,
+.link-no-mouse:active {
+  text-decoration: none;
+  cursor: default;
+  color: inherit;
+}
+
+/* 키보드 사용자(접근성)를 위해 탭 포커스만 시각화:
+   포커스가 들어올 때만 점선 또는 아웃라인을 보여줌 */
+.link-no-mouse:focus-visible {
+  outline: 2px dashed #777;
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* 2) 완전 숨김: 마우스/키보드 모두 변화 없음 (접근성 저하) */
+.link-no-mouse-hide {
+  color: inherit;
+  text-decoration: none;
+  cursor: default;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;             /* 포커스 시 아웃라인도 안 보이게 함 */
+}
+
+/* 마우스/활성/포커스 상태에서 전혀 스타일 변화 없음 */
+.link-no-mouse-hide:hover,
+.link-no-mouse-hide:active,
+.link-no-mouse-hide:focus,
+.link-no-mouse-hide:focus-visible {
+  text-decoration: none;
+  cursor: default;
+  color: inherit;
+  outline: none;
+}
+</style>
+  </footer>
+</body>
+</html>

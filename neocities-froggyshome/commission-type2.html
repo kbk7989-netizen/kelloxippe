@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기본 일러스트 | Froggy Commission</title>
+
+  <!-- 폰트 -->
+  <link href="https://fonts.cdnfonts.com/css/frog" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+
+  <style>
+  /* -----------------------------
+     상세 페이지 전용 CSS (최종)
+  ------------------------------*/
+
+  :root {
+    --main-green: #7ed48c;
+    --leaf-green: #53b66b;
+  }
+
+  body {
+    font-family: 'Jua', sans-serif;
+    background: linear-gradient(180deg, #c5f8db 0%, #d8fff0 40%, #a7f3dc 75%, #c9ffe8 100%);
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  /* HEADER */
+
+  .header-mini h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .header-mini .subtitle {
+    margin-top: 0.4rem;
+    font-size: 1rem;
+    color: var(--leaf-green);
+    font-style: italic;
+  }
+
+  /* DETAIL SECTION */
+  .detail-section {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    border-radius: 24px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    padding: 3rem 3rem 2rem 2rem;
+    text-align: center;
+    margin: 2rem auto 4rem auto;
+    max-width: 700px;
+  }
+
+  .detail-thumbnail {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 16px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+  }
+
+  /* PRICE LIST */
+  .price-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 2rem 0;
+  }
+
+  .price-list li {
+    background: rgba(126, 212, 140, 0.25);
+    padding: 0.6rem 1rem;
+    margin-bottom: 0.6rem;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+
+  /* EXAMPLE GALLERY */
+  .example-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .example-gallery img {
+    width: 180px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  /* BACK BUTTON */
+  .back-btn-container {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .back-btn {
+    font-family: 'Frog', sans-serif;
+    background: var(--main-green);
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 16px;
+    font-weight: normal;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s;
+  }
+
+  .back-btn:hover {
+    background: var(--leaf-green);
+  }
+
+  /* APPLY BUTTON */
+  .button-container {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .apply-btn {
+    background: var(--main-green);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 16px;
+    font-weight: normal;
+    font-size: 1.3rem;
+    text-decoration: none;
+    margin-top: 3rem; /* 카드 아래 여백 확보 */
+    margin-bottom: 3rem;
+    display: inline-block;
+    transition: background 0.3s;
+  }
+
+  .apply-btn:hover {
+    background: var(--leaf-green);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .example-gallery img {
+      width: 140px;
+    }
+    .detail-section {
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
+    }
+    .apply-btn {
+      font-size: 1.1rem;
+      padding: 0.6rem 1.5rem;
+    }
+    .back-btn {
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  /* -----------------------------
+     BACKGROUND EFFECTS: POND DROPS
+  ------------------------------ */
+  .background-effects {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  .pond-drop {
+    position: absolute;
+    bottom: 0;
+    border-radius: 50%;
+    background: rgba(173, 216, 230, 0.5);
+    left: calc(100% * var(--i));
+    animation: floatUp var(--speed,12s) linear infinite;
+    animation-delay: var(--delay,0s);
+    z-index: -1;
+  }
+
+  .pond-drop.small { width: 10px; height: 10px; }
+  .pond-drop.medium { width: 20px; height: 20px; }
+  .pond-drop.large { width: 30px; height: 30px; }
+
+  @keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 0.7; }
+    30% { opacity: 0.6; }
+    60% { opacity: 0.5; }
+    100% { transform: translateY(-1200px) scale(1.5); opacity: 0; }
+  }
+  </style>
+</head>
+<body>
+
+<!-- 배경 비눗방울 -->
+<div class="background-effects">
+  <div class="pond-drop small" style="--i:0.1; --speed:12s; --delay:0s;"></div>
+  <div class="pond-drop medium" style="--i:0.3; --speed:14s; --delay:1s;"></div>
+  <div class="pond-drop large" style="--i:0.5; --speed:16s; --delay:0.5s;"></div>
+  <div class="pond-drop medium" style="--i:0.7; --speed:13s; --delay:2s;"></div>
+  <div class="pond-drop small" style="--i:0.2; --speed:15s; --delay:0.8s;"></div>
+  <div class="pond-drop large" style="--i:0.8; --speed:18s; --delay:1.2s;"></div>
+  <div class="pond-drop medium" style="--i:0.4; --speed:17s; --delay:0.3s;"></div>
+  <div class="pond-drop small" style="--i:0.6; --speed:13s; --delay:1.5s;"></div>
+  <div class="pond-drop large" style="--i:0.9; --speed:20s; --delay:0s;"></div>
+  <div class="pond-drop medium" style="--i:0.05; --speed:16s; --delay:1s;"></div>
+</div>
+
+
+<header class="header-mini glass">
+<a href="index.html" class="logo-link">
+    <img src="assets/logo.png" alt="Froggy Home Logo" class="logo-img" />
+  </a>
+  <h1>기본 일러스트</h1>
+  <p class="subtitle">단일 캐릭터 중심의 간단한 커미션</p>
+</header>
+
+<section class="detail-section center">
+  <div class="back-btn-container">
+    <a href="commission.html" class="back-btn"> 뒤로 돌아가기</a>
+  </div>
+
+
+  <div class="detail-info">
+    <h2>설명</h2>
+    <p>단일 캐릭터 중심의 반신 일러스트입니다. 캐릭터 시트나 프로필용으로 적합합니다.</p>
+
+    <h2>가격</h2>
+    <ul class="price-list">
+      <li><strong>기본:</strong> 30,000원</li>
+      <li><strong>복잡한 디자인:</strong> +10,000원</li>
+    </ul>
+
+    <h2>예시</h2>
+    <div class="example-gallery">
+      <img src="assets/sample_type1_1.png" alt="">
+      <img src="assets/sample_type1_2.png" alt="">
+    </div>
+
+    <div class="button-container">
+      <a href="commission-apply.html" class="apply-btn">🐸💌 신청하기🐸💌</a>
+    </div>
+  </div>
+</section>
+</body>
+</html>

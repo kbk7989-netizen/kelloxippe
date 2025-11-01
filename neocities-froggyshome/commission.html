@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Froggy's Commission</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="header-mini glass">
+    <a href="index.html" class="logo-link">
+      <img src="assets/logo.png" alt="Froggy Home Logo" class="logo-img" />
+    </a>
+    <h1>Commission</h1>
+    <p class="welcome">“의뢰해주셔서 감사합니다 🐸💚”</p>
+  </header>
+
+  <!-- 슬롯 상태 -->
+  <section class="slot-status">
+    <h2>현재 커미션 슬롯</h2>
+    <div id="lotus-container" class="lotus-container"></div>
+    <p id="slot-text"></p>
+  </section>
+
+  <!-- 타입 목록 -->
+  <section class="commission-types">
+    <h2>커미션 타입</h2>
+    <div class="type-grid">
+      <!-- 각 타입 카드 -->
+       <a href="commission-type1.html" class="commission-card">
+      <div class="type-card" data-type="1">
+        <img src="assets/thumb_basic.png" alt="기본 일러스트" class="thumb-img">
+        <h3>기본 일러스트</h3>
+        <p class="subtitle">단일 캐릭터 / 간단 배경</p>
+      </div>
+      </a>
+      
+      <a href="commission-type2.html" class="commission-card">
+      <div class="type-card" data-type="2">
+        <img src="assets/thumb_sd.png" alt="SD 캐릭터" class="thumb-img">
+        <h3>SD 캐릭터</h3>
+        <p class="subtitle">귀엽고 동글동글한 스타일</p>
+      </div>
+      </a>
+      
+      <a href="commission-type3.html" class="commission-card">
+      <div class="type-card" data-type="3">
+        <img src="assets/thumb_couple.png" alt="커플 일러스트" class="thumb-img">
+        <h3>커플 일러스트</h3>
+        <p class="subtitle">두 캐릭터의 순간을 담아요</p>
+      </div>
+      </a>
+      
+      <a href="commission-type4.html" class="commission-card">
+      <div class="type-card" data-type="4">
+        <img src="assets/thumb_half.png" alt="반신" class="thumb-img">
+        <h3>반신</h3>
+        <p class="subtitle">허리까지 표현된 반신 일러스트</p>
+      </div>
+      </a>
+    </div>
+    
+  <!-- 뒤로가기 버튼 -->
+  <div class="back-btn-container">
+    <a href="index.html">뒤로 돌아가기</a>
+  </div>
+
+
+  </section>
+
+  <!-- 상세 보기 -->
+  <section id="type-detail" class="type-detail hidden">
+    <h3 id="detail-title">타입을 선택해주세요!</h3>
+    <p id="detail-description">커미션 타입을 클릭하면 상세 정보가 여기에 표시됩니다.</p>
+    <button id="apply-type-btn" class="hidden">이 타입 신청하기</button>
+  </section>
+<style>
+
+.back-btn-container a {
+  display: inline-block;          /* 버튼처럼 보이게 */
+  padding: 0.5rem 1.2rem;         /* 버튼 안 여백 */
+  background-color: #8BC34A;      /* 연두색 배경 */
+  color: white;                   /* 글자색 */
+  text-decoration: none;           /* 밑줄 제거 */
+  border: 1px solid #7CB342;      /* 테두리 */
+  border-radius: 0.5rem;           /* 모서리 둥글게 */
+  cursor: pointer;                 /* 마우스 올리면 손 모양 */
+  font-size: 1rem;                 /* 글자 크기 */
+  font-family: 'Frog', sans-serif; /* 개구리 느낌 폰트 (선택) */
+  transition: background-color 0.2s ease; /* hover 부드럽게 */
+}
+
+/* 방문 후에도 색상과 밑줄 유지 */
+.back-btn-container a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+/* hover 시 살짝 진하게 */
+.back-btn-container a:hover {
+  background-color: #7CB342;
+  text-decoration: none;
+}
+
+/* 클릭 중에도 밑줄 없음 */
+.back-btn-container a:active {
+  text-decoration: none;
+  color: white;
+}
+</style>
+  <script src="assets/commission.js"></script>
+</body>
+</html>

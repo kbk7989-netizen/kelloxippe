@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자캐 판매 | Froggy</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="header-mini glass">
+  <a href="index.html" class="logo-link">
+    <img src="assets/logo.png" alt="Froggy Home Logo" class="logo-img">
+  </a>
+  <h1>자캐 판매</h1>
+  <p class="subtitle">판매 중인 캐릭터를 확인하고 외부 사이트에서 거래하세요 🐸💚</p>
+</header>
+
+
+<div id="admin-controls" class="center hidden">
+  <button id="add-character-btn" class="apply-btn">➕ 캐릭터 등록</button>
+</div>
+
+
+<section id="sales-list" class="card-grid center"></section>
+
+
+
+<div class="back-btn-container">
+  <a href="index.html"> 뒤로 돌아가기</a>
+</div>
+
+
+<style>
+/* 기존 back-btn 스타일 아래에 추가 가능 */
+#add-character-btn {
+  display: inline-block;          /* 버튼처럼 보이게 */
+  padding: 0.5rem 0.5rem;         /* 버튼 안 여백 */
+  background-color: #4CAF50;      /* 초록색 배경 */
+  color: white;                   /* 글자색 */
+  border: 1px solid #388E3C;      /* 테두리 */
+  border-radius: 0.5rem;          /* 모서리 둥글게 */
+  cursor: pointer;                /* 마우스 올리면 손 모양 */
+  font-size: 1rem;                /* 글자 크기 */
+  font-family: 'Frog', sans-serif; /* 폰트 선택 */
+  margin-top: 2rem;             /* 위쪽 여백 */
+  margin-left:5rem;
+  transition: background-color 0.2s ease;
+}
+
+/* hover 시 진하게 */
+#add-character-btn:hover {
+  background-color: #388E3C;
+}
+
+/* 클릭 중에도 색 유지 */
+#add-character-btn:active {
+  background-color: #2E7D32;
+  color: white;
+}
+
+
+.back-btn-container a {
+  display: inline-block;          /* 버튼처럼 보이게 */
+  padding: 0.5rem 1.2rem;         /* 버튼 안 여백 */
+  background-color: #8BC34A;      /* 연두색 배경 */
+  color: white;                   /* 글자색 */
+  text-decoration: none;           /* 밑줄 제거 */
+  border: 1px solid #7CB342;      /* 테두리 */
+  border-radius: 0.5rem;           /* 모서리 둥글게 */
+  cursor: pointer;                 /* 마우스 올리면 손 모양 */
+  font-size: 1rem;                 /* 글자 크기 */
+  font-family: 'Frog', sans-serif; /* 개구리 느낌 폰트 (선택) */
+  transition: background-color 0.2s ease; /* hover 부드럽게 */
+  margin-top:2rem;
+}
+
+/* 방문 후에도 색상과 밑줄 유지 */
+.back-btn-container a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+/* hover 시 살짝 진하게 */
+.back-btn-container a:hover {
+  background-color: #7CB342;
+  text-decoration: none;
+}
+
+/* 클릭 중에도 밑줄 없음 */
+.back-btn-container a:active {
+  text-decoration: none;
+  color: white;
+}
+</style>
+
+  <script src="assets/sales.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>커미션 신청 | Froggy</title>
+
+<link href="https://fonts.cdnfonts.com/css/frog" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+
+<style>
+:root {
+  --main-green: #7ed48c;
+  --leaf-green: #53b66b;
+  --accent-light: rgba(255,255,255,0.25);
+}
+
+body {
+  font-family: 'Jua', sans-serif;
+  background: linear-gradient(180deg, #c5f8db 0%, #d8fff0 50%, #a7f3dc 100%);
+  margin: 0;
+  padding: 0;
+}
+
+/* HEADER */
+.header-mini {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 0;
+  background: linear-gradient(135deg, #c9ffe8, #b3fcd6);
+  border-bottom: 2px solid var(--main-green);
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.header-mini h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.header-mini .subtitle {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: var(--leaf-green);
+}
+
+/* BACK BUTTON */
+.back-btn-container {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.back-btn {
+  font-family: 'Frog', sans-serif;
+  background-color: var(--main-green);
+  color: white;
+  border: 1px solid var(--leaf-green);
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.back-btn:hover {
+  background-color: var(--leaf-green);
+  transform: translateY(-1px);
+}
+
+/* FORM SECTION */
+.apply-form-section {
+  max-width: 600px;
+  margin: 2rem auto 4rem auto;
+  padding: 2rem;
+  background: var(--accent-light);
+  border-radius: 24px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+
+/* 입력 폼 */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+form label {
+  font-weight: 600;
+  color: var(--leaf-green);
+}
+
+form input, form textarea {
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background-color: rgba(255,255,255,0.5);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s;
+}
+
+form input:focus, form textarea:focus {
+  border-color: var(--main-green);
+  box-shadow: 0 0 10px rgba(126,212,140,0.3);
+  background-color: rgba(255,255,255,0.7);
+}
+
+/* SUBMIT BUTTON */
+.apply-btn {
+  font-size: 1.1rem;
+  padding: 0.8rem 2rem;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #7ed48c, #53b66b);
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2), inset 0 -3px 6px rgba(255,255,255,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.apply-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25), inset 0 -3px 6px rgba(255,255,255,0.25);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px) {
+  .apply-form-section {
+    padding: 1.5rem;
+    margin: 1.5rem auto 3rem auto;
+  }
+
+  .apply-btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+  }
+}
+.apply-btn {
+  font-weight: normal; /* 기존 bold → normal */
+}
+
+</style>
+</head>
+<body>
+
+<header class="header-mini">
+  <a href="index.html" class="logo-link">
+    <img src="assets/logo.png" alt="Froggy Home Logo" class="logo-img">
+  </a>
+  <h1>커미션 신청</h1>
+  <p class="subtitle">폼을 작성하여 원하는 커미션을 신청해주세요 🐸💌</p>
+</header>
+
+<div class="back-btn-container">
+  <button class="back-btn" type="button" onclick="history.back()">← 뒤로 돌아가기</button>
+</div>
+
+<section class="apply-form-section">
+  <form id="commissionForm">
+    <label for="type">커미션 타입</label>
+    <input type="text" id="type" name="type" readonly placeholder="자동 선택됨">
+
+    <label for="name">이름</label>
+    <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required>
+
+    <label for="contact">연락처</label>
+    <input type="text" id="contact" name="contact" placeholder="이메일 또는 디스코드" required>
+
+    <label for="character">캐릭터 정보</label>
+    <textarea id="character" name="character" placeholder="캐릭터 설명, 참조 이미지 링크 등" rows="5" required></textarea>
+
+    <label for="extra">추가 요청</label>
+    <textarea id="extra" name="extra" placeholder="특별 요청 사항" rows="3"></textarea>
+
+    <button type="submit" class="apply-btn">🐸 💌 신청 완료🐸 💌</button>
+
+  </form>
+</section>
+
+<script src="assets/commission-apply.js"></script>
+</body>
+</html>
